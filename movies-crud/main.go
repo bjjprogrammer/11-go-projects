@@ -81,7 +81,7 @@ func deleteMovie(w http.ResponseWriter, r *http.Request) {
 	for i, item := range movies {
 		if item.ID == params["id"] {
 			movies = append(movies[:i], movies[i+1:]...)
-			json.NewEncoder(w).Encode(movies)
+			json.NewEncoder(w).Encode(item)
 			return
 		}
 	}
